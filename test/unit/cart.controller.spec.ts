@@ -2,11 +2,11 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { CartController } from '@/controllers/cart.controller';
 import { CartService } from '@/services/cart.service';
 
-describe('AppController', () => {
-  let app: TestingModule;
+describe('CartController', () => {
+  let cart: TestingModule;
 
   beforeAll(async () => {
-    app = await Test.createTestingModule({
+    cart = await Test.createTestingModule({
       controllers: [CartController],
       providers: [CartService],
     }).compile();
@@ -14,7 +14,7 @@ describe('AppController', () => {
 
   describe('getHello', () => {
     it('should return "Hello 你好"', () => {
-      const cartController = app.get(CartController);
+      const cartController = cart.get(CartController);
       expect(cartController.getCart('你好')).toBe('Hello 你好');
     });
   });
