@@ -22,7 +22,7 @@ describe('App.Module (e2e)', () => {
 
   it('/todo (GET)', () => {
     return request(app.getHttpServer())
-      .get('/todo')
+      .get('/todo?a=1')
       .expect(200)
       .expect('Hello World!');
   });
